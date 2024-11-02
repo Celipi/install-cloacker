@@ -64,8 +64,7 @@ wait
 
 # Download do docker-compose.yml
 animate_dots "Baixando configurações" 5 &
-run_silently git clone https://github.com/Celipi/cloacker.git
-run_silently cd cloacker
+run_silently curl -L https://raw.githubusercontent.com/Celipi/cloacker/main/docker-compose.yml -o docker-compose.yml
 
 # Criar a rede traefik_proxy (se não existir)
 if ! docker network inspect traefik_proxy >/dev/null 2>&1; then
